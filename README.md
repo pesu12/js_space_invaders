@@ -24,4 +24,4 @@ Versions
 
 Copyrights
 ----------
-Feel free to use the code and to comment on it
+Feel free to use the code and to comment on it.
