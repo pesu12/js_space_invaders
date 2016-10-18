@@ -5,7 +5,7 @@ October 2016 by Per Sundberg
 
 Introduction
 ------------
-I am learninge js-script by developing a js space-invaders game
+I am learning js-script by developing a js space-invaders game
 
 Requirement
 -----------
@@ -21,3 +21,7 @@ Development issues
 Versions
 --------
 2016-10-18 First version
+
+Copyrights
+----------
+Feel free to use the code and to comment on it
