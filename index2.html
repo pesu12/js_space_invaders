@@ -57,12 +57,11 @@
 }
 
 .usedheroes {
-	background: 	#008000;
+	background: #008000;
 	width: 20px;
 	height: 20px;
 	position: absolute;
 }
-
 </style>
 </head>
 
@@ -70,7 +69,7 @@
 	<div id="background"></div>
 	<div id="hero"></div>
 	<div id="laser"></div>
-	<div id="enemylaser"></div>	
+	<div id="enemylaser"></div>
 	<div id="score"></div>
 	<div id="gameover">GAME OVER</div>
 	<script>
@@ -85,6 +84,7 @@ var score = 0;
 var heroesleft = 3;
 
 var controller = new Object();
+var enemyshoot = null;
 var enemies = new Array();
 var usedheroes = new Array();
 
@@ -258,13 +258,16 @@ function updatePositions() {
 								
 		if (enemies[i].x > 100) {
 			if (enemyshoot === null) {
-				var enemyshoot = {x:240, y:60};	
+				enemyshoot = {x:120, y:60};	
 				var element = document.getElementById('enemylaser');
 				element.style.visibility = 'visible';
-				enemylaser.x = 260 ;
-				enemylaser.y = 50;	
+				element.style.left = enemyshoot.x + 'px';
+				element.style.top = enemyshoot.y;				
 				console.log("Hello");
 			}
+		} else {
+			var element = document.getElementById('enemylaser');
+			element.style.visibility = 'hidden';			
 		}
 	/*	
 		if (enemies[i].x > 240) {
@@ -280,9 +283,14 @@ function updatePositions() {
 		}
 	*/
 	}
+	//Update laser
 	laser.y -=12;
-	if(enemyshoot) {
-		enemyshoot.y +=12;		
+	
+	if (enemyshoot) {
+		var element = document.getElementById('enemylaser');
+		enemyshoot.y = enemyshoot.y + 9;
+		element.style.top = enemyshoot.y + 'px';
+		console.log(element.style.top);
 	}
 }
 
